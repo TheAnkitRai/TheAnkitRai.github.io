@@ -1,106 +1,495 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Portfolio</title>
+<meta charset="UTF-8">
+<title>Your Name</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: #e2e8f0;
-        }
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0f172a;
+  color: #e2e8f0;
+  display: flex;
+}
 
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            background: #020617;
-        }
+/* Sidebar */
+nav {
+  width: 230px;
+  height: 100vh;
+  background: #020617;
+  display: flex;
+  flex-direction: column;
+}
 
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
+nav a {
+  padding: 12px 20px;
+  color: #38bdf8;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-        h2 {
-            color: #38bdf8;
-        }
+nav a:hover {
+  background: #1e293b;
+}
 
-        section {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px 20px;
-        }
+/* Main content */
+main {
+  flex: 1;
+  padding: 40px;
+}
 
-        .card {
-            background: #1e293b;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
-        }
+/* Sections */
+.section {
+  display: none;
+}
 
-        a {
-            color: #38bdf8;
-            text-decoration: none;
-        }
+.section.active {
+  display: block;
+}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #020617;
-        }
-    </style>
+/* Home layout */
+.home-container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.home-container img {
+  width: 200px;
+  border-radius: 10px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 10px;
+}
+
+h2 { color: #38bdf8; }
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edu-header h3 {
+  margin: 0;
+}
+
+.edu-header span {
+  font-weight: bold;
+  color: #94a3b8;
+}
+
+ul li {
+  margin-bottom: 6px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #38bdf8;
+}
+
+ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 6px;
+}
+
+.card p {
+  margin: 6px 0 0 0;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.slider img {
+  width: 420px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #1e293b;
+}
+
+.arrow {
+  background: #1e293b;
+  border: none;
+  color: white;
+  font-size: 26px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.arrow:hover {
+  background: #334155;
+}
+
+</style>
+
+<script>
+function showSection(id) {
+  let sections = document.querySelectorAll('.section');
+  sections.forEach(sec => sec.classList.remove('active'));
+
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
 </head>
 
 <body>
 
-<header>
-    <h1>Ankit Rai</h1>
-    <p>PhD Scholar | AI & Machine Learning | IIT Roorkee</p>
-</header>
+<nav>
+  <a onclick="showSection('home')">Home</a>
+  <a onclick="showSection('education')">Education</a>
+  <a onclick="showSection('research')">Research Experience</a>
+  <a onclick="showSection('publications')">Publications</a>
+  <a onclick="showSection('achievements')">Academic Achievements</a>
+  <a onclick="showSection('skills')">Skills & Certifications</a>
+  <a onclick="showSection('projects')">Projects</a>
+  <a onclick="showSection('responsibilities')">Academic Responsibilities</a>
+  <a onclick="showSection('gallery')">Photo Gallery</a>
+  <a onclick="showSection('contact')">Contact</a>
+</nav>
 
-<section>
-    <h2>About</h2>
+<main>
+
+<div id="home" class="section active">
+  <div class="home-container">
+    <img src="images/Profile.jpg">
+    <div>
+      <h1>Ankit Rai</h1>
+      <p>PhD Scholar
+      <br>Department of Computer Science and Engineering  
+      <br>Indian Institute of Technology (IIT) Roorkee
+      <br>Roorkee, India</p>
+      <p>
+        Working on AI-driven healthcare systems .......
+      </p>
+    </div>
+  </div>
+
+  <p style="margin-top:60px;">
+    Ankit is pursuing a Doctor of Philosophy (PhD) in Computer Science and Engineering at IIT Roorkee, where his 
+    research focuses on cutting-edge advancements in artificial intelligence, machine learning, data science, etc. 
+    He is passionate about solving complex problems and pushing the boundaries of technology through innovative research 
+    and collaboration.
+  </p>
+  <p>
+    In addition to his research, Ankit is always seeking opportunities to broaden his knowledge and apply his skills to 
+    real-world challenges. He enjoys exploring new technologies and trends, and his commitment to continuous learning 
+    and growth in this ever-evolving field is unyielding. He is eager to contribute to innovative projects and collaborate with like-minded professionals, whether in 
+    academia or industry, to make a meaningful impact in the world of technology.
+  </p>
+    
+  <p>
+    Feel free to connect with him to discuss research opportunities, collaboration, or any exciting projects in 
+    computer science !
+  </p>
+</div>
+
+<div id="education" class="section">
+  <h2>Education</h2>
+
+  <div class="card">
+    <div class="edu-header">
+      <h3>Doctor of Philosophy (Ph.D.) in Computer Science and Engineering</h3>
+      <span>2024 – Present</span>
+    </div>
+    <p>Indian Institute of Technology Roorkee</p>
+  </div>
+
+  <div class="card">
+    <div class="edu-header">
+      <h3>Master of Technology (M.Tech.) in Data Science</h3>
+      <span>2022 – 2024</span>
+    </div>
+    <p>Jawaharlal Nehru University, New Delhi</p>
+  </div>
+
+  <div class="card">
+    <div class="edu-header">
+      <h3>Bachelor of Technology (B.Tech.) in Computer Science and Engineering</h3>
+      <span>2018 – 2022</span>
+    </div>
+    <p>Gautam Buddha University, Greater Noida</p>
+  </div>
+
+</div>
+
+<div id="research" class="section">
+  <h2>Research Experience</h2>
+
+  <div class="card">
+    <div class="edu-header">
+      <h3>Research Scholar – 
+      <a href="https://sites.google.com/view/lab01-research-group-scss-jnu/members/ankit-rai?authuser=0" target="_blank">
+        BMineLytics Research Lab
+      </a></h3>
+      <span>July 2023 – June 2024</span>
+    </div>
+    <p><strong>School of Computer and Systems Sciences, JNU New Delhi</strong></p>
     <p>
-        I am a PhD researcher working in Artificial Intelligence driven Healthcare,
-        focusing on intelligent medical data analysis and clinical decision systems.
     </p>
-</section>
 
-<section>
-    <h2>Research Work</h2>
+    <ul>
+      <li>Worked in BMineLytics Research Lab under the supervision of Dr. Aditi Sharan.</li>
+      <li>Conducted research in Biomedical Text Mining, focusing on transforming unstructured biomedical text into structured knowledge graphs.</li>
+      <li>Research resulted in a peer-reviewed conference publication.</li>
+    </ul>
+  </div>
 
-    <div class="card">
-        <h3>AI-Driven Intelligent Healthcare</h3>
-        <p>
-            AI-Driven Intelligent Healthcare.
-        </p>
+  <div class="card">
+    <div class="edu-header">
+      <h3>Research Internship – Google Research exploreCSR 2023–2024</h3>
+      <span>Jan 2024 – May 2024</span>
+    </div>
+    <p><strong>Indian Institute of Technology Roorkee (Google Research Sponsored Program)</strong></p>
+
+    <ul>
+      <li>Engaged with expert faculty and researchers from leading institutions.</li>
+      <li>Worked on NLP-based Fake News Detection under the guidance of Dr. Raksha Sharma.</li>
+      <li>Gained hands-on research experience in real-world problem settings.</li>
+    </ul>
+  </div>
+
+</div>
+
+<div id="publications" class="section">
+  <h2>Publications</h2>
+
+  <div class="card">
+    <div class="edu-header">
+      <h3>Oversampling-Enhanced Classification Models for Handling Imbalanced Recurrent Tuberculosis Data from Uttarakhand</h3>
+      <span>2025</span>
     </div>
 
-</section>
+    <p>
+      <strong>Ankit Rai</strong>, D. Toshniwal, R. Dua, S. Varfa
+    </p>
 
-<section>
-    <h2>Projects</h2>
+    <p>
+      <em>13th IEEE International Conference on Big Data, Macau, China</em>
+    </p>
+  </div>
 
-    <div class="card">
-        <h3>Project Title</h3>
-        <p>Short description</p>
-        <a href="#">GitHub Link</a>
+  <div class="card">
+    <div class="edu-header">
+      <h3>PICO-KG: A Clinical Knowledge Representation of MIMIC III Discharge Summaries</h3>
+      <span>2025</span>
     </div>
 
-</section>
+    <p>
+      <strong>Ankit Rai</strong>, S. Tripathi, A. Sharan
+    </p>
 
-<section>
-    <h2>Contact</h2>
-    <p>Email: ankitrai3700@gmail.com</p>
-    <p>GitHub: <a href="#">Your GitHub</a></p>
-</section>
+    <p>
+      <em>5th International Conference on Intelligent Systems and Machine Learning</em>
+    </p>
+  </div>
 
-<footer>
-    <p>© 2026 Ankit Rai</p>
-</footer>
+</div>
+
+<div id="achievements" class="section">
+  <h2>Academic Achievements</h2>
+
+  <div class="card">
+    <div class="edu-header">
+      <h3>GATE (Computer Science)</h3>
+      <span>2024, 2025</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="edu-header">
+      <h3>UGC NET</h3>
+      <span>June 2023, June 2024</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="edu-header">
+      <h3>CUET PG</h3>
+      <span>2022</span>
+    </div>
+  </div>
+
+</div>
+
+<div id="skills" class="section">
+  <h2>Skills</h2>
+
+  <div class="card">
+    <h3>Research Areas</h3>
+    <p>Artificial Intelligence, Machine Learning, NLP, Deep Learning, Data Mining</p>
+  </div>
+
+  <div class="card">
+    <h3>Knowledge Graphs & Graph Databases</h3>
+    <p>Graph DBMS (Neo4j), Cypher Query Language, Graph-Based Data Modeling</p>
+  </div>
+
+  <div class="card">
+    <h3>Programming</h3>
+    <p>Python, C/C++</p>
+  </div>
+
+  <div class="card">
+    <h3>Frameworks & Tools</h3>
+    <p>PyTorch, TensorFlow, Scikit-learn, OpenCV</p>
+  </div>
+
+  <div class="card">
+    <h3>Data & Systems</h3>
+    <p>SQL, Cypher Query Language</p>
+  </div>
+
+
+  <h2 style="margin-top:40px;">Certifications</h2>
+
+  <div class="card">
+    <ul>
+      <li>Certification 1</li>
+      <li>Certification 2</li>
+      <li>Certification 3</li>
+      <li>Certification 4</li>
+      <li>Certification 5</li>
+      <li>Certification 6</li>
+      <li>Certification 7</li>
+      <li>Certification 8</li>
+      <li>Certification 9</li>
+      <li>Certification 10</li>
+    </ul>
+  </div>
+
+</div>
+
+<div id="projects" class="section">
+  <h2>Projects</h2>
+
+  <div class="card">
+    <div class="edu-header">
+      <h3>PICO Knowledge Graph from Biomedical Text</h3>
+      <span>Research Project</span>
+    </div>
+
+    <ul>
+      <li>Performed entity and relationship extraction from biomedical text using the PICO framework.</li>
+      <li>Constructed a biomedical knowledge graph using extracted entities and relationships.</li>
+      <li>Implemented graph storage and querying using Neo4j (Graph Database Management System).</li>
+      <li>Utilized Cypher Query Language for efficient graph querying and data modeling.</li>
+    </ul>
+  </div>
+
+</div>
+
+<div id="responsibilities" class="section">
+  <h2>Academic Responsibilities</h2>
+
+  <div class="card">
+    <h3>Operating System (CSC-204)</h3>
+    <p><strong>Teaching Assistant</strong></p>
+  </div>
+
+  <div class="card">
+    <h3>Programming with C and C++ (CSC-202)</h3>
+    <p><strong>Exam Invigilator</strong></p>
+  </div>
+
+</div>
+
+
+<div id="gallery" class="section">
+  <h2>Photo Gallery</h2>
+
+  <div class="card">
+
+    <div class="slider">
+
+      <button class="arrow" onclick="changeImage(-1)">&#10094;</button>
+
+      <img id="sliderImage" alt="Gallery Image">
+
+      <button class="arrow" onclick="changeImage(1)">&#10095;</button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div id="contact" class="section">
+  <h2>Contact</h2>
+
+  <div class="card">
+
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:ankitrai3720@gmail.com">Send Email</a>
+    </p>
+
+    <p>
+      <strong>GitHub:</strong>
+      <a href="https://github.com/theankitrai" target="_blank">
+        Visit Profile
+      </a>
+    </p>
+
+    <p>
+      <strong>LinkedIn:</strong>
+      <a href="https://www.linkedin.com/in/the-ankitrai" target="_blank">
+        Connect
+      </a>
+    </p>
+
+  </div>
+
+</div>
+
+</main>
+
+<script>
+let images = [
+  "images/Covocation_Degree.JPG",
+  "images/Covocation_stage.jpeg"
+];
+
+let currentIndex = 0;
+
+function changeImage(direction) {
+  currentIndex += direction;
+
+  if (currentIndex < 0) {
+    currentIndex = images.length - 1;
+  }
+
+  if (currentIndex >= images.length) {
+    currentIndex = 0;
+  }
+
+  document.getElementById("sliderImage").src = images[currentIndex];
+}
+
+/* FIX: ensure first image loads correctly */
+window.onload = function () {
+  document.getElementById("sliderImage").src = images[currentIndex];
+};
+</script>
 
 </body>
 </html>
